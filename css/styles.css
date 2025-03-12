@@ -38,8 +38,8 @@ button:hover {
 
   .jokeBox {
     padding: 1px 10px 10px 10px;
-    background-color: rgb(218, 218, 218);
-    /*  */
+    background-color: lightgray;
+
     .bttnDeleteJoke {
       background-color: red;
     }
@@ -47,7 +47,6 @@ button:hover {
     .bttnDeleteJoke:hover {
       background-color: rgb(159, 0, 0);
     }
-    /*  */
   }
 }
 
