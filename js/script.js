@@ -1,8 +1,7 @@
 let numJoke = 0;
 
 const emptyJokeList = () => {
-    const jokeList = document.getElementById("jokeList");
-    jokeList.innerHTML = "";
+    jokesList.innerHTML = "";
 }; // Hacer más tarde
 
 const obtainJoke = () => {
