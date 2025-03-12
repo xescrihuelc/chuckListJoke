@@ -64,12 +64,8 @@ const eraseJoke = (number) => {
     //
     const jokesArray = JSON.parse(localStorage.getItem("jokes"));
 
-    // const delJoke = jokesArray.indexOf(number);
-    // console.log(delJoke);
-
-    // Hacer que elimine el chíste de la posición 2
-    // cuando jokesArray tenga 5 posiciones
-    const updatedArray = jokesArray.splice(number, 1);
+    //
+    const updatedArray = jokesArray.filter((num) => num !== jokesArray[number]);
 
     //
     const newData = JSON.stringify(updatedArray);
