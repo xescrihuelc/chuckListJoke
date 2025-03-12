@@ -27,5 +27,27 @@ button:hover {
   background-color: #0056b3;
 }
 
+/*  */
 
+#jokeList{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-right: 20vh;
+  margin-left: 15vh;
+
+  .jokeBox {
+    padding: 1px 10px 10px 10px;
+    background-color: rgb(218, 218, 218);
+    /*  */
+    .bttnDeleteJoke {
+      background-color: red;
+    }
+    
+    .bttnDeleteJoke:hover {
+      background-color: rgb(159, 0, 0);
+    }
+    /*  */
+  }
+}
 
