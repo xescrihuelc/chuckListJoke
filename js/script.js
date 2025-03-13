@@ -2,7 +2,11 @@ let numJoke = 0;
 
 const emptyJokeList = () => {
     jokesList.innerHTML = "";
-}; // Hacer más tarde
+    let jokesArray = JSON.parse(localStorage.getItem("jokes"));
+    jokesArray = new Array();
+    const newData = JSON.stringify(jokesArray);
+    localStorage.setItem("jokes", newData);
+};
 
 const obtainJoke = () => {
     fetch("https://api.chucknorris.io/jokes/random")
@@ -65,7 +69,9 @@ const eraseJoke = (number) => {
     const jokesArray = JSON.parse(localStorage.getItem("jokes"));
 
     //
-    const updatedArray = jokesArray.filter((num) => num !== jokesArray[number]);
+    const updatedArray = jokesArray.filter(
+        (index) => index !== jokesArray[number]
+    );
 
     //
     const newData = JSON.stringify(updatedArray);
@@ -89,8 +95,10 @@ const loadJoke = () => {
 // Variable Elements
 const getJoke = document.getElementById("fetchJoke");
 const jokesList = document.getElementById("jokeList");
+const bttnEraseJokes = document.getElementById("eraseJokes");
 
 // Triggers
 getJoke.addEventListener("click", obtainJoke);
+bttnEraseJokes.addEventListener("click", emptyJokeList);
 
 loadJoke();
