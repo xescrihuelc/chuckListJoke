@@ -37,8 +37,7 @@ const saveJoke = (phrase) => {
     }
     const jokesArray = JSON.parse(localStorage.getItem("jokes"));
     jokesArray.push(phrase);
-    const newData = JSON.stringify(jokesArray);
-    localStorage.setItem("jokes", newData);
+    localStorage.setItem("jokes", JSON.stringify(jokesArray));
 };
 
 // Llama una función para actualizar los onclick()
@@ -50,7 +49,6 @@ const updateJoke = () => {
 
     jokes.forEach((joke) => {
         joke.setAttribute("onclick", `eraseJoke(${numJoke})`);
-        console.log(localStorage.getItem("jokes"));
         numJoke += 1;
     });
 };
@@ -68,11 +66,9 @@ const eraseJoke = (number) => {
     const updatedArray = jokesArray.filter(
         (index) => index !== jokesArray[number]
     );
-    const newData = JSON.stringify(updatedArray);
-    localStorage.setItem("jokes", newData);
+    localStorage.setItem("jokes", JSON.stringify(updatedArray));
 
-    // Llama una función para actualizar los onclick()
-    // de los elementos button de clase bttnDeleteJoke
+    // Invoca a la función updateJoke
     updateJoke();
 };
 
@@ -82,8 +78,7 @@ const emptyJokeList = () => {
     jokesList.innerHTML = "";
     let jokesArray = JSON.parse(localStorage.getItem("jokes"));
     jokesArray = new Array();
-    const newData = JSON.stringify(jokesArray);
-    localStorage.setItem("jokes", newData);
+    localStorage.setItem("jokes", JSON.stringify(jokesArray));
 };
 
 // Función que carga y muestras los
