@@ -1,4 +1,4 @@
-// Variable para marcar inicialmente posicion
+// Variable para marcar inicialmente posición
 // de Array de los chistes
 let numJoke = 0;
 
@@ -8,9 +8,9 @@ const obtainJoke = () => {
         .then((response) => response.json())
         .then((data) => {
             // Al obtener respuesta de la API
-            // invocará a estas dons funciones
-            renderJoke(data.value);
-            saveJoke(data.value);
+            // invocará a estas dos funciones
+            renderJoke(data.value); //Añade chíste a la página
+            saveJoke(data.value); //Añade chíste a array de localStorage
         })
         .catch((error) => {
             console.error("ERROR:", error);
